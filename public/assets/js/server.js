@@ -17,12 +17,11 @@ app.use(express.json());
 // Data goes here
 
 // HTML Routes
-module.exports = function(app) {
-  app.get("/notes", function(req, res) {
-    console.log(__dirname);
-    res.sendFile(path.join(__dirname, "../../notes.html"));
-  });
-};
+// module.exports = function(app) {
+app.get("/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "../../notes.html"));
+});
+// };
 
 app.listen(PORT, function() {
   console.log(`App listening on PORT: ${PORT}`);
