@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Data
-// Data goes here
+var dbNotes = require("../../../db/db");
 
 // HTML Routes
 app.get("/notes", function(req, res) {
@@ -28,8 +28,7 @@ app.get("/", function(req, res) {
 
 // API Routes
 app.get("/api/notes", function(req, res) {
-  console.log("Test");
-  return res.json();
+  return res.json(dbNotes);
 });
 
 app.listen(PORT, function() {
