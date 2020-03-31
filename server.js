@@ -1,7 +1,7 @@
 // Importing Packages
-// var http = require("http");
+var http = require("http");
 var express = require("express");
-// var fs = require("fs");
+var fs = require("fs");
 var path = require("path");
 
 // Setting up Express App and Dynamic Heroku PORT
@@ -35,10 +35,8 @@ app.get("/api/notes", function(req, res) {
 
 app.post("/api/notes", function(req, res) {
   var newEntry = req.body;
-  console.log(newEntry);
-  dbNotes.push(newEntry);
-  res.json({ testKey: testValue });
-  res.end();
+  dbNotes.push(req.body);
+  res.json();
 });
 
 // Setup Server Listening
