@@ -35,8 +35,9 @@ app.get("/api/notes", function(req, res) {
 
 app.post("/api/notes", function(req, res) {
   var newEntry = req.body;
-  dbNotes.push(req.body);
-  res.json();
+  console.log(req.body);
+  dbNotes.push(newEntry);
+  res.json(newEntry);
 });
 
 // Setup Server Listening
