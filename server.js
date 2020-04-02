@@ -34,10 +34,20 @@ app.get("/api/notes", function(req, res) {
 });
 
 app.post("/api/notes", function(req, res) {
-  var newEntry = req.body;
-  console.log(req.body);
-  dbNotes.push(newEntry);
-  res.json(newEntry);
+  var note = req.body;
+  dbNotes.push(note);
+  res.json(note);
+});
+
+app.get("/api/notes/:id", function(req, res) {
+  var selectedId = req.params.id;
+  console.log(selectedId);
+
+  for (var a = 0; a < dbNotes.length; a++) {
+    if (selectedId === dbNotes[a]) {
+      return res.json(dbNotes[a]);
+    }
+  }
 });
 
 // Setup Server Listening
