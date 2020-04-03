@@ -36,18 +36,24 @@ app.get("/api/notes", function(req, res) {
 app.post("/api/notes", function(req, res) {
   var note = req.body;
   dbNotes.push(note);
+  dbNotes.forEach((item, i) => {
+    item.id = i + 1;
+  });
   res.json(note);
 });
 
-app.get("/api/notes/:id", function(req, res) {
-  var selectedId = req.params.id;
-  console.log(selectedId);
-
+app.delete("/api/notes/:id", function(req, res) {
+  var id = dbNotes[req.params.id];
+  console.log(req.params.id);
+  // // console.log(dbNotes[]);
   for (var a = 0; a < dbNotes.length; a++) {
-    if (selectedId === dbNotes[a]) {
-      return res.json(dbNotes[a]);
+    // console.log(dbNotes[1]);
+    if (dbNotes[a] === id) {
+      // console.log(dbNotes[a]);
+      return res.json(false);
     }
   }
+  return res.json(false);
 });
 
 // Setup Server Listening
