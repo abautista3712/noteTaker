@@ -37,17 +37,15 @@ app.post("/api/notes", function (req, res) {
   var note = req.body;
   dbNotes.push(note);
   dbNotes.forEach((item, i) => {
-    item.id = i + 1;
+    item.id = i;
   });
   res.json(note);
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-  console.log("Delete route hit");
-  if (dbNotes.length === 1) {
-    dbNotes.pop();
-  }
-  dbNotes.splice((req.params.id -= 1), 1);
+  console.log(`Delete route hit. req.params.id = ${req.params.id}`);
+  var indexOfNote = dbNotes.findIndex((index) => index.id === req.params.id);
+  dbNotes.splice(indexOfNote, 1);
   res.json(dbNotes);
 });
 
