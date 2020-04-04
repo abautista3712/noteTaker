@@ -37,13 +37,12 @@ app.post("/api/notes", function (req, res) {
   var note = req.body;
   dbNotes.push(note);
   dbNotes.forEach((item, i) => {
-    item.id = i;
+    item.id = i + 1;
   });
   res.json(note);
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-  console.log(`Delete route hit. req.params.id = ${req.params.id}`);
   var indexOfNote = dbNotes.findIndex((index) => index.id === req.params.id);
   dbNotes.splice(indexOfNote, 1);
   res.json(dbNotes);
