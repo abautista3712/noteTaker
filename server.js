@@ -20,43 +20,38 @@ app.use(express.json());
 var dbNotes = require("./db/db");
 
 // HTML Routes
-app.get("/notes", function(req, res) {
+app.get("/notes", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 // API Routes
-app.get("/api/notes", function(req, res) {
+app.get("/api/notes", function (req, res) {
   return res.json(dbNotes);
 });
 
-app.post("/api/notes", function(req, res) {
+app.post("/api/notes", function (req, res) {
   var note = req.body;
   dbNotes.push(note);
   dbNotes.forEach((item, i) => {
-    item.id = i + 1;
+    item.id = i;
   });
   res.json(note);
 });
 
-app.delete("/api/notes/:id", function(req, res) {
-  var id = dbNotes[req.params.id];
-  console.log(req.params.id);
-  // // console.log(dbNotes[]);
-  for (var a = 0; a < dbNotes.length; a++) {
-    // console.log(dbNotes[1]);
-    if (dbNotes[a] === id) {
-      // console.log(dbNotes[a]);
-      return res.json(false);
-    }
+app.delete("/api/notes/:id", function (req, res) {
+  console.log("Delete route hit");
+  if (dbNotes.length === 1) {
+    dbNotes.pop();
   }
-  return res.json(false);
+  dbNotes.splice(req.params.id, 1);
+  res.json(dbNotes);
 });
 
 // Setup Server Listening
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`App listening on: http://localhost:${PORT}`);
 });
