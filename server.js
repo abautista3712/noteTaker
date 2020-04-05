@@ -43,7 +43,11 @@ app.post("/api/notes", function (req, res) {
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-  var indexOfNote = dbNotes.findIndex((index) => index.id === req.params.id);
+  console.log(dbNotes);
+  var indexOfNote = dbNotes.findIndex(
+    (index) => JSON.stringify(index.id) === req.params.id
+  );
+  console.log(indexOfNote);
   dbNotes.splice(indexOfNote, 1);
   res.json(dbNotes);
 });
