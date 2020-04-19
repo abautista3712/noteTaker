@@ -5,7 +5,7 @@ Created by abautista3712 | https://api.github.com/users/abautista3712
 ![npm](https://img.shields.io/npm/v/fs) ![npm](https://img.shields.io/npm/v/inquirer) ![npm](https://img.shields.io/npm/v/axios)
 
 ![noteTakerScreenshot](./public/assets/images/noteTakerScreenshot.PNG?raw=true "Note Taker Landing")
-!![noteTakerScreenshot2](./public/assets/images/noteTakerScreenshot2.PNG?raw=true "Note Taker")
+![noteTakerScreenshot2](./public/assets/images/noteTakerScreenshot2.PNG?raw=true "Note Taker")
 
 ## Description
 
@@ -44,14 +44,7 @@ None
 External contributions are discouraged.
 
 ## Testing
-
-To run tests, run the following command:
-
-```
-
 No commands are available to run tests.
-
-```
 
 ## Questions
 
