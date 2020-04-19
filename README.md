@@ -4,6 +4,9 @@ Created by abautista3712 | https://api.github.com/users/abautista3712
   
 ![npm](https://img.shields.io/npm/v/fs) ![npm](https://img.shields.io/npm/v/inquirer) ![npm](https://img.shields.io/npm/v/axios)
 
+![noteTakerScreenshot](./assets/images/noteTakerScreenshot.PNG?raw=true "noteTaker")
+![noteTakerScreenshot2](./assets/images/noteTakerScreenshot2.PNG?raw=true "noteTaker")
+
 ## Description
 
 A program utilizing a node.js express server for the user to read, write, and delete notes.
@@ -29,7 +32,8 @@ npm i
 
 ## Usage
 
-No extra information is needed in order to use the repo.
+Accessible via:
+https://stormy-wildwood-71353.herokuapp.com/
 
 ## License
 
