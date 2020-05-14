@@ -1,6 +1,6 @@
 # noteTaker
 
-Created by abautista3712 | https://api.github.com/users/abautista3712
+Created by abautista3712 | https://github.com/abautista3712
   
 ![npm](https://img.shields.io/npm/v/fs) ![npm](https://img.shields.io/npm/v/inquirer) ![npm](https://img.shields.io/npm/v/axios)
 
